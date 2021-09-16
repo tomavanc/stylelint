@@ -1,11 +1,9 @@
-'use strict';
+import os from 'os';
+import path from 'path';
+import { promises as fs } from 'fs';
 
-const os = require('os');
-const path = require('path');
-const { promises: fs } = require('fs');
-
-const replaceBackslashes = require('../lib/testUtils/replaceBackslashes');
-const uniqueId = require('../lib/testUtils/uniqueId');
+import replaceBackslashes from '../lib/testUtils/replaceBackslashes.js';
+import uniqueId from '../lib/testUtils/uniqueId.js';
 
 function caseFilePath(caseNumber, fileName = 'stylesheet') {
 	return replaceBackslashes(path.join(__dirname, caseNumber, fileName));
@@ -59,7 +57,7 @@ function prepForSnapshot({ results, output, ...rest }) {
 	};
 }
 
-module.exports = {
+export default {
 	caseCode,
 	caseConfig,
 	caseConfigFile,

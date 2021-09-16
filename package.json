@@ -22,7 +22,8 @@
   },
   "license": "MIT",
   "author": "stylelint",
-  "main": "lib/index.js",
+  "type": "module",
+  "exports": "./lib/index.js",
   "bin": {
     "stylelint": "bin/stylelint.js"
   },
@@ -61,9 +62,6 @@
       "stylelint"
     ],
     "globals": {
-      "__dirname": true,
-      "module": true,
-      "require": true,
       "testRule": true
     },
     "root": true
@@ -104,6 +102,9 @@
     ],
     "testEnvironment": "node",
     "testRegex": ".*\\.test\\.js$|rules/.*/__tests__/.*\\.js$",
+    "transform": {
+      "\\.js$": "jest-esm-transformer"
+    },
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
@@ -141,6 +142,7 @@
     "postcss-selector-parser": "^6.0.6",
     "postcss-value-parser": "^4.1.0",
     "resolve-from": "^5.0.0",
+    "simport": "^1.2.0",
     "slash": "^3.0.0",
     "specificity": "^0.4.1",
     "string-width": "^4.2.2",
@@ -170,11 +172,13 @@
     "benchmark": "^2.1.4",
     "common-tags": "^1.8.0",
     "deepmerge": "^4.2.2",
+    "esbuild": "^0.12.28",
     "eslint": "^7.32.0",
     "eslint-config-stylelint": "^14.0.0",
     "got": "^11.8.2",
     "husky": "^7.0.2",
     "jest": "^27.2.0",
+    "jest-esm-transformer": "^1.0.0",
     "jest-preset-stylelint": "^4.1.1",
     "jest-watch-typeahead": "^0.6.4",
     "lint-staged": "^11.1.2",

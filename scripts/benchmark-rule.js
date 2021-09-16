@@ -1,12 +1,10 @@
-'use strict';
-
 /* eslint-disable no-console */
-const Benchmark = require('benchmark');
-const chalk = require('chalk');
-const got = require('got');
-const normalizeRuleSettings = require('../lib/normalizeRuleSettings');
-const postcss = require('postcss');
-const rules = require('../lib/rules');
+import Benchmark from 'benchmark';
+import chalk from 'chalk';
+import got from 'got';
+import normalizeRuleSettings from '../lib/normalizeRuleSettings.js';
+import postcss from 'postcss';
+import rules from '../lib/rules/index.js';
 
 const ruleName = process.argv[2];
 const ruleOptions = process.argv[3];
