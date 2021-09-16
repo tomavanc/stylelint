@@ -120,7 +120,31 @@
       "unicorn/prevent-abbreviations": "off"
     }
   },
-  "prettier": "@stylelint/prettier-config",
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "endOfLine": "lf",
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "useTabs": true,
+    "overrides": [
+      {
+        "files": [
+          "package.json",
+          "package-lock.json",
+          "*.md"
+        ],
+        "options": {
+          "printWidth": 80,
+          "singleQuote": false,
+          "tabWidth": 2,
+          "trailingComma": "none",
+          "useTabs": false
+        }
+      }
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "stylelint"
