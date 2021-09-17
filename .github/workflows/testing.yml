@@ -2,12 +2,7 @@ name: Testing
 
 on:
   push:
-    branches:
-      - main
-      - 'dependabot/**'
   pull_request:
-    branches:
-      - '**'
 
 jobs:
   test:
@@ -44,7 +39,6 @@ jobs:
 
   coverage:
     name: Coverage on Node.js ${{ matrix.node }} and ${{ matrix.os }}
-
     runs-on: ${{ matrix.os }}
 
     strategy:
